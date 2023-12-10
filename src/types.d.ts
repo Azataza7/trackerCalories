@@ -7,3 +7,7 @@ export interface Meal {
 export interface MealsJson {
   [id: string]: Meal
 }
+
+export interface MealItemType extends Meal{
+  id: string;
+}

@@ -1,9 +1,13 @@
 import React from 'react';
 
-const TotalCalories = () => {
+interface Props {
+  total: number;
+}
+
+const TotalCalories: React.FC<Props> = ({total}) => {
   return (
     <div className="total-calories-container">
-      Total cal:
+      <p>Total kcal: {total}</p>
     </div>
   );
 };

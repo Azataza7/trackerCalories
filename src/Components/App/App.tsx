@@ -18,6 +18,9 @@ const App = () => {
           <Route path="add-meal" element={(
             <AddMeal/>
           )}/>
+          <Route path="meals/:id/edit" element={(
+            <AddMeal/>
+          )}/>
           <Route path="*" element={(
             <h1 className="not-found-text">Not found</h1>
           )}/>

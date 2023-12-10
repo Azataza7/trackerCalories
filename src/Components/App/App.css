@@ -2,8 +2,8 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0.9rem;
-  text-align: center;
   background-color: #242424;
+  color: #FFF;
 }
 
 .header-container {
@@ -11,6 +11,7 @@
   background-size: contain;
   max-width: 400px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .header-title {
@@ -27,4 +28,45 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.edit-btn, .delete-btn {
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+}
+
+.edit-btn {
+  background: url("././images/edit_icon.svg") no-repeat center;
+}
+.delete-btn {
+  background: url("././images/delete_icon.svg") no-repeat center;
+}
+
+.meal-block {
+  border: 3px solid white;
+  border-radius: 10px;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.meal-info{
+  flex-basis: 80%;
+  position: relative;
+}
+
+.meal-kcal {
+  color: orange;
+  border: 1px solid orange;
+  border-radius: 10px;
+  padding: 5px;
+
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.meal-text {
+  font-size: 20px;
 }
