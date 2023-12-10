@@ -1,6 +1,30 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0.9rem;
   text-align: center;
+  background-color: #242424;
+}
+
+.header-container {
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/022/979/461/small/cartoon-fire-effect-a-yellow-bonfire-burns-to-heat-png.png") no-repeat 83% 50%;
+  background-size: contain;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: orange;
+}
+
+.total-calories-container {
+  color: red;
+}
+
+.block-calories-add-meal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
