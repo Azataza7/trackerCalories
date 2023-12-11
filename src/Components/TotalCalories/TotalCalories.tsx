@@ -6,7 +6,7 @@ interface Props {
 
 const TotalCalories: React.FC<Props> = ({total}) => {
   return (
-    <div className="total-calories-container">
+    <div className="total-calories">
       <p>Total kcal: {total}</p>
     </div>
   );

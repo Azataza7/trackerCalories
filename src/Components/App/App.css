@@ -20,8 +20,10 @@
   color: orange;
 }
 
-.total-calories-container {
+.total-calories {
+  font-weight: 600;
   color: red;
+  font-size: 20px;
 }
 
 .block-calories-add-meal {

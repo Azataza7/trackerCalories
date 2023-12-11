@@ -33,7 +33,7 @@ const Meal:React.FC = () => {
 
   let mealList = (
     meals.map((meal, i) => {
-      return <MealItem key={i} mealItem={meal}/>
+      return <MealItem key={i} mealItem={meal} refreshData={fetchData}/>
     })
   )
 
