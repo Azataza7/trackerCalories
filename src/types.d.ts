@@ -1,5 +1,5 @@
 export interface Meal {
-  calories: number;
+  calories: string;
   category: string;
   mealDesc: string;
 }

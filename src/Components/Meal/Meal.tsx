@@ -19,7 +19,7 @@ const Meal:React.FC = () => {
         ...response.data[id]
       }));
 
-      setMeals(mealList);
+      setMeals(mealList.reverse());
     } finally {
       setLoading(false);
     }
@@ -29,7 +29,7 @@ const Meal:React.FC = () => {
     void fetchData();
   }, []);
 
-  const totalCalories = meals.reduce((total, meal) => total + meal.calories, 0);
+  const totalCalories = meals.reduce((total, meal) => total + Number(meal.calories), 0);
 
   let mealList = (
     meals.map((meal, i) => {

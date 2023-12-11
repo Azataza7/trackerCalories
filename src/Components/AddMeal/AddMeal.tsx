@@ -1,34 +1,35 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import axiosApi from '../../axiosApi';
-import {useParams} from 'react-router-dom';
-import {Meal, MealItemType, MealsJson} from '../../types';
+import {useNavigate, useParams} from 'react-router-dom';
+import {Meal, MealItemType} from '../../types';
 
 const AddMeal = () => {
   const [loading, setLoading] = useState(false);
   const params = useParams();
+  const navigate = useNavigate();
   const [meal, setMeal] = useState<Meal>({
-    calories: 1,
+    calories: '',
     category: '',
     mealDesc: '',
   });
-  const id = params.id
+  const id = params.id;
 
   useEffect(() => {
     const fetchEditData = async () => {
       if (id) {
         setLoading(true);
         try {
-          const response = await axiosApi.get(`meals/${id}.json`)
+          const response = await axiosApi.get(`meals/${id}.json`);
           const fetchedMeal: MealItemType = response.data;
           setMeal(fetchedMeal);
         } catch (e) {
-          console.log('Error' + e)
+          console.log('Error' + e);
         } finally {
-          setLoading(false)
+          setLoading(false);
         }
       }
     };
-    void fetchEditData()
+    void fetchEditData();
   }, [id]);
 
   const mealChanged = useCallback((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>) => {
@@ -38,7 +39,7 @@ const AddMeal = () => {
       ...prevState,
       [name]: value,
     }));
-  }, [])
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,6 +50,7 @@ const AddMeal = () => {
         await axiosApi.put(`/meals/${id}.json`, meal);
       } else {
         await axiosApi.post('/meals.json', meal);
+        navigate('/');
       }
     } finally {
       setLoading(false);
@@ -93,6 +95,7 @@ const AddMeal = () => {
             value={meal.category}
             required
           >
+            <option value="" disabled hidden>Choose category</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Snack">Snack</option>
             <option value="Lunch">Lunch</option>
